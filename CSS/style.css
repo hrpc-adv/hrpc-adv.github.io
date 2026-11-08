@@ -1,0 +1,1160 @@
+/* ==========================================================================
+   HR&PC Advogados
+   Identidade: Ardósia #26303B · Linho #EBEBDD · Cobre #9A694E
+               Champanhe #C9AE7C · Cobre escuro #7A4E37
+   Fontes: EB Garamond (títulos) · Cinzel (rótulos) · Lato (texto)
+   ========================================================================== */
+
+:root {
+  --ardosia: #26303b;
+  --ardosia-2: #1d252e;
+  --linho: #ebebdd;
+  --linho-claro: #f6f5ee;
+  --cobre: #9a694e;
+  --champanhe: #c9ae7c;
+  --cobre-escuro: #7a4e37;
+  --texto: #2b333c;
+  --texto-suave: #55606b;
+  --branco: #ffffff;
+
+  --fonte-titulo: "EB Garamond", Georgia, "Times New Roman", serif;
+  --fonte-rotulo: "Cinzel", Georgia, serif;
+  --fonte-texto: "Lato", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --largura: 1140px;
+  --raio: 6px;
+  --altura-topo: 76px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--altura-topo);
+}
+
+body {
+  font-family: var(--fonte-texto);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--texto);
+  background: var(--linho-claro);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cobre);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-estreito {
+  max-width: 820px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.pular-conteudo {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 2000;
+  background: var(--ardosia);
+  color: var(--linho);
+  padding: 10px 16px;
+  border-radius: var(--raio);
+}
+
+.pular-conteudo:focus {
+  top: 12px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ardosia);
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 42px);
+}
+
+h3 {
+  font-size: 23px;
+}
+
+.rotulo {
+  font-family: var(--fonte-rotulo);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cobre-escuro);
+  margin-bottom: 14px;
+}
+
+.rotulo-claro {
+  color: var(--champanhe);
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-block;
+  font-family: var(--fonte-texto);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  padding: 15px 28px;
+  border-radius: var(--raio);
+  border: 1px solid transparent;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.botao-pequeno {
+  padding: 10px 18px;
+  font-size: 14px;
+}
+
+.botao-cobre {
+  background: var(--cobre);
+  color: var(--branco);
+}
+
+.botao-cobre:hover {
+  background: var(--cobre-escuro);
+}
+
+.botao-escuro {
+  background: var(--ardosia);
+  color: var(--linho);
+}
+
+.botao-escuro:hover {
+  background: var(--cobre-escuro);
+}
+
+/* ---------- Topo ---------- */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--ardosia);
+  border-bottom: 1px solid rgba(201, 174, 124, 0.25);
+}
+
+.topo-interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--altura-topo);
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.marca-sigla {
+  font-family: var(--fonte-rotulo);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--linho);
+  letter-spacing: 0.06em;
+}
+
+.marca-sub {
+  font-family: var(--fonte-rotulo);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--champanhe);
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.menu a:not(.botao) {
+  color: var(--linho);
+  text-decoration: none;
+  font-size: 15px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.menu a:not(.botao):hover {
+  opacity: 1;
+  color: var(--champanhe);
+}
+
+.menu-botao {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-botao-linha {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--linho);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ---------- Abertura ---------- */
+.abertura {
+  background:
+    linear-gradient(100deg, rgba(29, 37, 46, 0.97) 0%, rgba(38, 48, 59, 0.9) 50%, rgba(38, 48, 59, 0.78) 100%),
+    url("../img/escritorio-advocacia-paranagua-recepcao.jpg") center / cover no-repeat,
+    var(--ardosia);
+  color: var(--linho);
+  padding: 96px 0 88px;
+}
+
+.abertura h1 {
+  color: var(--linho);
+  font-size: clamp(36px, 5.2vw, 60px);
+  max-width: 980px;
+}
+
+.abertura-texto {
+  font-size: 19px;
+  max-width: 680px;
+  margin-top: 22px;
+  color: rgba(235, 235, 221, 0.86);
+}
+
+.portas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+  scroll-margin-top: calc(var(--altura-topo) + 24px);
+}
+
+.porta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 32px 30px;
+  border: 1px solid rgba(201, 174, 124, 0.35);
+  border-radius: var(--raio);
+  background: rgba(235, 235, 221, 0.04);
+  text-decoration: none;
+  color: var(--linho);
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.porta:hover {
+  border-color: var(--champanhe);
+  background: rgba(235, 235, 221, 0.08);
+  transform: translateY(-3px);
+}
+
+.porta-rotulo {
+  font-family: var(--fonte-rotulo);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--champanhe);
+}
+
+.porta-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.porta-texto {
+  color: rgba(235, 235, 221, 0.8);
+}
+
+.porta-acao {
+  margin-top: auto;
+  padding-top: 8px;
+  font-weight: 700;
+  color: var(--champanhe);
+}
+
+.abertura-local {
+  margin-top: 40px;
+  font-family: var(--fonte-rotulo);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(235, 235, 221, 0.6);
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  padding: 96px 0;
+}
+
+.secao-linho {
+  background: var(--linho);
+}
+
+.secao-escura {
+  background: var(--ardosia);
+  color: rgba(235, 235, 221, 0.86);
+}
+
+.secao-escura h2,
+.secao-escura h3 {
+  color: var(--linho);
+}
+
+.secao-cabecalho {
+  max-width: 760px;
+  margin-bottom: 52px;
+}
+
+.secao-intro {
+  margin-top: 18px;
+  font-size: 18px;
+  color: var(--texto-suave);
+}
+
+.secao-escura .secao-intro {
+  color: rgba(235, 235, 221, 0.8);
+}
+
+.secao-escura strong,
+.secao-escura .secao-intro strong {
+  color: var(--linho);
+}
+
+.secao-acao {
+  margin-top: 44px;
+}
+
+/* ---------- Cartões (pessoas) ---------- */
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.cartao {
+  background: var(--branco);
+  border: 1px solid #e3e1d3;
+  border-top: 3px solid var(--cobre);
+  border-radius: var(--raio);
+  padding: 30px 28px;
+}
+
+.cartao h3 {
+  margin-bottom: 10px;
+}
+
+.cartao p {
+  color: var(--texto-suave);
+}
+
+/* ---------- Jornada (empresas) ---------- */
+.jornada {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.etapa {
+  border-top: 1px solid rgba(201, 174, 124, 0.45);
+  padding-top: 22px;
+}
+
+.etapa-numero {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 40px;
+  color: var(--champanhe);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.etapa h3 {
+  margin-bottom: 10px;
+}
+
+.etapa p {
+  font-size: 16px;
+}
+
+/* ---------- Sócios ---------- */
+.socios {
+  display: grid;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.socio {
+  background: var(--linho);
+  border-radius: var(--raio);
+  padding: 24px;
+}
+
+.socio-foto {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--ardosia);
+}
+
+/* Iniciais aparecem enquanto a foto não estiver na pasta img */
+.socio-foto::before {
+  content: attr(data-iniciais);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--fonte-rotulo);
+  font-size: 34px;
+  letter-spacing: 0.08em;
+  color: var(--champanhe);
+}
+
+.socio-foto img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.socio-texto h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.socio-texto p:not(.rotulo) {
+  font-size: 16px;
+  color: var(--texto-suave);
+}
+
+.socio-texto .rotulo {
+  margin-bottom: 6px;
+}
+
+.socio-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.socio-links a {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--cobre-escuro);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(122, 78, 55, 0.35);
+}
+
+.socio-links a:hover {
+  border-color: var(--cobre-escuro);
+}
+
+/* ---------- Como funciona ---------- */
+.passos {
+  margin-top: 72px;
+  list-style: none;
+  counter-reset: passo;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.passo {
+  counter-increment: passo;
+  padding: 28px 24px;
+  background: var(--branco);
+  border: 1px solid #e3e1d3;
+  border-radius: var(--raio);
+}
+
+.passo::before {
+  content: counter(passo, decimal-leading-zero);
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 34px;
+  color: var(--cobre);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.passo h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.passo p {
+  font-size: 16px;
+  color: var(--texto-suave);
+}
+
+/* ---------- Dúvidas ---------- */
+.perguntas {
+  display: grid;
+  gap: 12px;
+}
+
+.perguntas details {
+  background: var(--linho-claro);
+  border-radius: var(--raio);
+  padding: 0 24px;
+}
+
+.perguntas summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 32px 20px 0;
+  position: relative;
+  font-family: var(--fonte-titulo);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ardosia);
+}
+
+.perguntas summary::-webkit-details-marker {
+  display: none;
+}
+
+.perguntas summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--fonte-texto);
+  font-size: 26px;
+  color: var(--cobre);
+}
+
+.perguntas details[open] summary::after {
+  content: "−";
+}
+
+.perguntas details p {
+  padding-bottom: 22px;
+  color: var(--texto-suave);
+}
+
+/* ---------- Contato ---------- */
+.enderecos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(201, 174, 124, 0.25);
+}
+
+.endereco h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.endereco a {
+  color: var(--champanhe);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.endereco a:hover {
+  text-decoration: underline;
+}
+
+.endereco p {
+  margin-bottom: 6px;
+}
+
+
+/* ---------- Abertura: ações ---------- */
+.abertura-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.botao-contorno {
+  border-color: rgba(201, 174, 124, 0.6);
+  color: var(--linho);
+}
+
+.botao-contorno:hover {
+  border-color: var(--champanhe);
+  color: var(--champanhe);
+}
+
+/* ---------- Onde as frentes se encontram ---------- */
+.encontro {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.encontro-lista {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.encontro-lista li {
+  background: var(--branco);
+  border: 1px solid #e3e1d3;
+  border-left: 3px solid var(--cobre);
+  border-radius: var(--raio);
+  padding: 18px 22px;
+  color: var(--texto-suave);
+}
+
+.encontro-lista strong {
+  color: var(--ardosia);
+}
+
+/* ---------- Documentos ---------- */
+.documentos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.documentos-coluna {
+  background: var(--linho-claro);
+  border-radius: var(--raio);
+  padding: 28px 26px;
+}
+
+.documentos-coluna h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.documentos-coluna ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.documentos-coluna li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 16px;
+  color: var(--texto-suave);
+}
+
+.documentos-coluna li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--cobre);
+  border-radius: 2px;
+}
+
+/* ---------- História e sócios ---------- */
+.historia {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.historia-foto {
+  position: sticky;
+  top: calc(var(--altura-topo) + 24px);
+  margin: 0;
+}
+
+.historia-foto img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--raio);
+  box-shadow: 0 18px 40px rgba(38, 48, 59, 0.18);
+}
+
+.historia-foto figcaption {
+  margin-top: 12px;
+  font-family: var(--fonte-rotulo);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cobre-escuro);
+}
+
+
+
+.historia-texto .secao-intro + .secao-intro {
+  margin-top: 12px;
+}
+
+/* ---------- Contato ---------- */
+.contato-principal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.contato-destaque {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 30px;
+  border: 1px solid rgba(201, 174, 124, 0.35);
+  border-radius: var(--raio);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.contato-destaque:hover {
+  border-color: var(--champanhe);
+  background: rgba(235, 235, 221, 0.05);
+}
+
+.contato-rotulo {
+  font-family: var(--fonte-rotulo);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--champanhe);
+}
+
+.contato-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--linho);
+  overflow-wrap: anywhere;
+}
+
+.contato-dado {
+  color: rgba(235, 235, 221, 0.75);
+}
+
+.endereco p a {
+  font-weight: 700;
+}
+
+
+/* ---------- Portas: destaque ---------- */
+.porta-destaque {
+  border-color: rgba(201, 174, 124, 0.7);
+  background: rgba(154, 105, 78, 0.16);
+}
+
+/* ---------- Áreas (pessoas) ---------- */
+.areas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.area {
+  background: var(--branco);
+  border: 1px solid #e3e1d3;
+  border-top: 3px solid var(--cobre);
+  border-radius: var(--raio);
+  padding: 30px 28px;
+  scroll-margin-top: calc(var(--altura-topo) + 20px);
+}
+
+.area h3 {
+  margin-bottom: 16px;
+}
+
+.lista-acoes {
+  list-style: none;
+  display: grid;
+  gap: 9px;
+}
+
+.lista-acoes li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 16px;
+  color: var(--texto-suave);
+}
+
+.lista-acoes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 10px;
+  height: 1.5px;
+  background: var(--cobre);
+}
+
+.area-nota {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #ebe9de;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--cobre-escuro);
+}
+
+/* ---------- Terceiro setor e cultura ---------- */
+.secao-cobre {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(201, 174, 124, 0.25), transparent 55%),
+    var(--cobre-escuro);
+  color: rgba(235, 235, 221, 0.9);
+}
+
+.secao-cobre h2,
+.secao-cobre h3 {
+  color: var(--linho);
+}
+
+.secao-cobre .secao-intro {
+  color: rgba(235, 235, 221, 0.88);
+}
+
+.rotulo-linho {
+  color: rgba(235, 235, 221, 0.85);
+}
+
+.terceiro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  scroll-margin-top: calc(var(--altura-topo) + 20px);
+}
+
+.terceiro-bloco {
+  background: rgba(29, 37, 46, 0.22);
+  border: 1px solid rgba(235, 235, 221, 0.25);
+  border-radius: var(--raio);
+  padding: 32px 30px;
+  scroll-margin-top: calc(var(--altura-topo) + 20px);
+}
+
+.terceiro-bloco h3 {
+  font-size: 27px;
+  margin-bottom: 18px;
+}
+
+.secao-cobre .lista-acoes li {
+  color: rgba(235, 235, 221, 0.9);
+}
+
+.secao-cobre .lista-acoes li::before {
+  background: var(--champanhe);
+}
+
+.linha-projeto {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 40px;
+  border-top: 1px solid rgba(235, 235, 221, 0.35);
+}
+
+.linha-projeto li {
+  padding: 18px 12px 0 0;
+  font-family: var(--fonte-titulo);
+  font-size: 20px;
+  color: var(--linho);
+}
+
+.linha-projeto span {
+  display: block;
+  font-family: var(--fonte-rotulo);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--champanhe);
+  margin-bottom: 4px;
+}
+
+/* ---------- Galeria do escritório ---------- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--raio);
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  background: var(--ardosia-2);
+  color: rgba(235, 235, 221, 0.7);
+  font-size: 14px;
+  padding: 44px 0 36px;
+}
+
+.rodape-interno {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.rodape-marca {
+  font-family: var(--fonte-rotulo);
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  color: var(--linho);
+  margin-bottom: 6px;
+}
+
+.rodape-aviso {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(235, 235, 221, 0.12);
+  font-size: 13px;
+  color: rgba(235, 235, 221, 0.55);
+}
+
+/* ---------- WhatsApp flutuante (celular) ---------- */
+.whatsapp-flutuante {
+  display: none;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 900;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--cobre);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  place-items: center;
+}
+
+.whatsapp-flutuante svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--branco);
+}
+
+/* ---------- Revelação ao rolar ----------
+   O conteúdo só fica oculto se o JavaScript carregar (classe .js no <html>).
+   Sem JavaScript, tudo aparece normalmente. */
+.js .revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.js .revelar.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .revelar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .porta,
+  .porta:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1000px) {
+  .jornada,
+  .passos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portas,
+  .documentos {
+    grid-template-columns: 1fr;
+  }
+  .linha-projeto {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 18px;
+  }
+  .encontro,
+  .historia {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .historia-foto {
+    position: relative;
+    top: 0;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 860px) {
+  .menu-botao {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: var(--altura-topo);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--ardosia);
+    border-bottom: 1px solid rgba(201, 174, 124, 0.25);
+    padding: 8px 24px 24px;
+    display: none;
+  }
+
+  .menu.aberto {
+    display: flex;
+  }
+
+  .menu a:not(.botao) {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(235, 235, 221, 0.1);
+  }
+
+  .menu .botao {
+    margin-top: 18px;
+    text-align: center;
+  }
+
+  .menu-botao[aria-expanded="true"] .menu-botao-linha:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-botao[aria-expanded="true"] .menu-botao-linha:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-botao[aria-expanded="true"] .menu-botao-linha:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .grade-cartoes,
+  .areas,
+  .terceiro,
+  .socios,
+  .contato-principal,
+  .enderecos {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-flutuante {
+    display: grid;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+  .abertura {
+    padding: 64px 0 60px;
+  }
+  .secao {
+    padding: 68px 0;
+  }
+  .jornada,
+  .passos {
+    grid-template-columns: 1fr;
+  }
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .terceiro-bloco,
+  .area {
+    padding: 26px 22px;
+  }
+  .contato-nome {
+    font-size: 25px;
+  }
+  .abertura-acoes .botao {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .porta {
+    padding: 26px 22px;
+  }
+  .porta-titulo {
+    font-size: 26px;
+  }
+  .secao-acao .botao {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* ---------- Ajustes dos cartões dos sócios ---------- */
+.socio h3 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.socio .rotulo {
+  margin-bottom: 6px;
+}
+
+.socio p:not(.rotulo) {
+  font-size: 16px;
+  color: var(--texto-suave);
+}
