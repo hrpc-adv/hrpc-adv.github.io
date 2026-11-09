@@ -1158,3 +1158,113 @@ h3 {
   font-size: 16px;
   color: var(--texto-suave);
 }
+
+/* ---------- Aviso de cookies e links legais ---------- */
+.aviso-cookies {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 18px 20px;
+  background: var(--ardosia);
+  color: var(--linho);
+  border: 1px solid rgba(201, 174, 124, 0.35);
+  border-radius: var(--raio);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.aviso-cookies p {
+  flex: 1 1 320px;
+  margin: 0;
+}
+
+.aviso-cookies a {
+  color: var(--champanhe);
+  text-decoration: underline;
+}
+
+.aviso-cookies-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.rodape-links {
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+.rodape-links a,
+.rodape-links button {
+  color: rgba(235, 235, 221, 0.75);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.rodape-links a:hover,
+.rodape-links button:hover {
+  color: var(--champanhe);
+}
+
+@media (max-width: 600px) {
+  .aviso-cookies {
+    bottom: 84px;
+  }
+}
+
+/* ---------- Página de política ---------- */
+.pagina-legal {
+  padding: 120px 0 72px;
+}
+
+.pagina-legal .container {
+  max-width: 820px;
+}
+
+.pagina-legal h1 {
+  font-family: var(--fonte-titulo);
+  color: var(--ardosia);
+  font-size: clamp(32px, 4vw, 44px);
+  margin-bottom: 8px;
+}
+
+.pagina-legal h2 {
+  font-family: var(--fonte-titulo);
+  color: var(--ardosia);
+  font-size: 24px;
+  margin: 34px 0 10px;
+}
+
+.pagina-legal p,
+.pagina-legal li {
+  margin-bottom: 12px;
+}
+
+.pagina-legal ul {
+  padding-left: 22px;
+}
+
+.pagina-legal .atualizacao {
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+.aviso-cookies .botao {
+  cursor: pointer;
+}
+
+.aviso-cookies .botao-contorno {
+  background: transparent;
+}
