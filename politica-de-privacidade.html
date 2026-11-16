@@ -24,17 +24,57 @@
     <script>
       document.documentElement.classList.add("js");
     </script>
+    <script src="Javascript/script.js" defer></script>
     <script src="Javascript/analytics.js" defer></script>
   </head>
   <body>
     <header class="topo" id="topo">
       <div class="container topo-interno">
-        <a href="index.html" class="marca" aria-label="HR&amp;PC Advogados, voltar ao início">
+        <a href="/" class="marca" aria-label="HR&amp;PC Advogados, voltar ao início">
           <span class="marca-sigla">HR&amp;PC</span>
           <span class="marca-sub">Advogados</span>
         </a>
-        <nav class="menu" aria-label="Menu principal" style="display:flex">
-          <a href="index.html">Voltar ao site</a>
+        <button class="menu-botao" aria-expanded="false" aria-controls="menu-principal">
+          <span class="menu-botao-linha"></span><span class="menu-botao-linha"></span><span class="menu-botao-linha"></span>
+          <span class="sr-only">Abrir menu</span>
+        </button>
+        <nav class="menu" id="menu-principal" aria-label="Menu principal">
+          <div class="menu-grupo">
+            <button class="menu-grupo-botao" type="button" aria-expanded="false" aria-controls="sub-pessoas">Para pessoas</button>
+            <div class="submenu" id="sub-pessoas">
+              <div class="submenu-caixa">
+                <a href="/#pessoas" class="submenu-rotulo">Visão geral</a>
+                <a href="/negativa-plano-de-saude/">Negativa de plano de saúde</a>
+                <a href="/defesa-criminal/">Defesa criminal</a>
+                <a href="/consumidor-e-civel/">Consumidor e cível</a>
+              </div>
+            </div>
+          </div>
+          <div class="menu-grupo">
+            <button class="menu-grupo-botao" type="button" aria-expanded="false" aria-controls="sub-empresas">Para empresas</button>
+            <div class="submenu" id="sub-empresas">
+              <div class="submenu-caixa">
+                <a href="/#empresas" class="submenu-rotulo">Visão geral</a>
+                <a href="/licitacoes/">Licitações</a>
+                <a href="/contratos-administrativos/">Contratos administrativos</a>
+                <a href="/vigilancia-sanitaria/">Vigilância sanitária</a>
+                <a href="/direito-empresarial/">Direito empresarial</a>
+              </div>
+            </div>
+          </div>
+          <div class="menu-grupo">
+            <button class="menu-grupo-botao" type="button" aria-expanded="false" aria-controls="sub-instituicoes">Instituições e projetos</button>
+            <div class="submenu" id="sub-instituicoes">
+              <div class="submenu-caixa">
+                <a href="/#terceiro-setor" class="submenu-rotulo">Visão geral</a>
+                <a href="/terceiro-setor/">Terceiro setor</a>
+                <a href="/captacao-de-recursos/">Captação de recursos: renúncia fiscal e editais</a>
+              </div>
+            </div>
+          </div>
+          <a href="/conteudos/">Conteúdos</a>
+          <a href="/#contato">Contato</a>
+          <a class="botao botao-cobre botao-pequeno" href="https://wa.me/5541999770085?text=Ol%C3%A1%2C%20vim%20pelo%20site%20do%20HR%26PC%20Advogados." target="_blank" rel="noopener">Fale com o escritório</a>
         </nav>
       </div>
     </header>
