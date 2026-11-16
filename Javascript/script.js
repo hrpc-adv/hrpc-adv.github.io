@@ -23,6 +23,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  // 1b. Grupos do menu (Para pessoas, Para empresas): abre e fecha ao clicar
+  const grupos = document.querySelectorAll(".menu-grupo-botao");
+  const fecharGrupos = (exceto) => {
+    grupos.forEach((g) => {
+      if (g !== exceto) g.setAttribute("aria-expanded", "false");
+    });
+  };
+  grupos.forEach((g) => {
+    g.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const aberto = g.getAttribute("aria-expanded") === "true";
+      fecharGrupos(g);
+      g.setAttribute("aria-expanded", String(!aberto));
+    });
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".menu-grupo")) fecharGrupos(null);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") fecharGrupos(null);
+  });
+
   // 2. Fotos dos sócios: se o arquivo ainda não existir, mostra as iniciais
   document.querySelectorAll(".socio-foto img, .historia-foto img").forEach((img) => {
     const esconder = () => img.remove();
